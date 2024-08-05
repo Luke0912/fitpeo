@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const DashboardContainer = styled.div`
   display: flex;
   background-color: #1f1f2e;
-  // color: white;
-  // height: 100vh;
 `;
 
 export const Sidebar = styled.div`
@@ -75,6 +73,11 @@ export const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 80px 20px 20px 20px; /* Add top padding to accommodate the TopBar */
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    padding: 80px 10px 10px 10px; /* Adjust padding for smaller screens */
+  }
 `;
 
 export const UserSection = styled.div`
@@ -96,6 +99,10 @@ export const CardContainer = styled.div`
   @media (min-width: 768px) {
     flex-wrap: nowrap;
   }
+  @media (max-width: 400px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 export const Card = styled.div`
@@ -108,16 +115,30 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 400px) {
+    padding: 10px;
+    min-width: 100px;
+  }
 `;
 
 export const CardTitle = styled.h2`
   margin: 0;
   margin-bottom: 10px;
   font-size: 1.2rem;
+
+  @media (max-width: 400px) {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
 `;
 
 export const CardValue = styled.p`
   font-size: 2rem;
+
+  @media (max-width: 400px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const ContentArea = styled.div`
@@ -129,6 +150,9 @@ export const ContentArea = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
+  }
+  @media (max-width: 400px) {
+    gap: 10px;
   }
 `;
 
@@ -142,6 +166,9 @@ export const ActivityCard = styled.div`
   @media (min-width: 768px) {
     margin-bottom: 0;
   }
+  @media (max-width: 400px) {
+    padding: 10px;
+  }
 `;
 
 export const RecentOrders = styled.div`
@@ -151,8 +178,12 @@ export const RecentOrders = styled.div`
   flex: 1;
   min-width: 300px;
   margin-top: 20px; /* Added margin at the top */
-`;
 
+  @media (max-width: 400px) {
+    padding: 10px;
+    min-width: auto;
+  }
+`;
 
 export const RecentOrdersTable = styled.table`
   width: 100%;
@@ -164,11 +195,19 @@ export const RecentOrdersTH = styled.th`
   border-bottom: 1px solid #444;
   padding: 10px;
   text-align: left;
+
+  @media (max-width: 400px) {
+    padding: 5px;
+  }
 `;
 
 export const RecentOrdersTD = styled.td`
   border-bottom: 1px solid #444;
   padding: 10px;
+
+  @media (max-width: 400px) {
+    padding: 5px;
+  }
 `;
 
 export const CustomerFeedback = styled.div`
@@ -177,6 +216,11 @@ export const CustomerFeedback = styled.div`
   padding: 20px;
   flex: 1;
   min-width: 300px;
+
+  @media (max-width: 400px) {
+    padding: 10px;
+    min-width: auto;
+  }
 `;
 
 export const FeedbackItem = styled.div`
@@ -191,6 +235,10 @@ export const FeedbackHeader = styled.div`
 
 export const FeedbackName = styled.h4`
   margin-left: 5px;
+
+  @media (max-width: 400px) {
+    font-size: 1rem;
+  }
 `;
 
 export const FeedbackText = styled.p`
@@ -205,6 +253,11 @@ export const PieChartContainer = styled.div`
   padding: 20px;
   margin-bottom: 20px;
   margin-top: 50px;
+
+  @media (max-width: 400px) {
+    padding: 10px;
+    margin-top: 20px;
+  }
 `;
 
 export const GoalContainer = styled.div`
@@ -214,6 +267,10 @@ export const GoalContainer = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   height: auto;
+
+  @media (max-width: 400px) {
+    padding: 10px;
+  }
 `;
 
 export const GoalCard = styled.div`
@@ -225,10 +282,18 @@ export const GoalCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 400px) {
+    padding: 10px;
+  }
 `;
 
 export const GoalTitle = styled.h2`
   margin: 10px 0;
+
+  @media (max-width: 400px) {
+    font-size: 1rem;
+  }
 `;
 
 export const LeftColumn = styled.div`
