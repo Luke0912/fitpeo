@@ -2,78 +2,79 @@ import styled from "styled-components";
 
 export const DashboardContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  // height: 100vh;
   background-color: #1f1f2e;
-  color: white;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
+  // color: white;
+  // height: 100vh;
 `;
 
 export const Sidebar = styled.div`
   display: flex;
-  flex-direction: column; /* Arrange items vertically */
+  flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 60px;
   background-color: #2c2c3a;
-  padding: 10px 0;
-  height: 133vh; /* Ensure the sidebar takes the full height of the viewport */
-
-  @media (min-width: 768px) {
-    width: 60px;
-    padding: 20px 0;
-  }
+  padding: 20px 0;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
 
   .icon {
-    margin-bottom: 20px; /* Add space between icons */
-    font-size: 2rem; /* Increase FontAwesome icon size */
+    margin-bottom: 20px;
+    font-size: 2rem;
   }
   .icon1 {
-    font-size: 2rem; /* Increase FontAwesome icon size */
-    margin-top: 800px; /* Push the icon to the bottom */
-    padding: 10px; /* Add padding for better spacing */
-    border-radius: 8px; /* Optional: add border radius for rounded corners */
-    color: white; /* Set icon color to white for better contrast */
+    font-size: 2rem;
+    margin-top: auto;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
   }
   .icon2 {
-    margin-bottom: 20px; /* Add space between icons */
-    font-size: 2rem; /* Increase FontAwesome icon size */
-    background-color: blue; /* Set background color */
-    padding: 10px; /* Add padding to ensure the background color is visible */
-    border-radius: 8px; /* Optional: add border radius for rounded corners */
-    display: flex; /* Ensure the icon is centered within the background */
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
-    width: 40px; /* Set a fixed width */
-    height: 40px; /* Set a fixed height */
-    color: white; /* Optional: set icon color to white for better contrast */
+    margin-bottom: 20px;
+    font-size: 2rem;
+    background-color: blue;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: white;
   }
 `;
+
 export const SidebarIcon = styled.div`
-  margin: 20px 0; /* Reduced the margin to minimize the gap between items */
+  margin: 20px 0;
   font-size: 24px;
 `;
 
 export const SidebarBottomIcon = styled(SidebarIcon)`
-  margin-top: auto; /* Push the last item to the bottom */
-`;
-
-export const MainContent = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  // padding: 20px;
+  margin-top: auto;
 `;
 
 export const TopBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  background-color: #2c2c3a; /* Highlight black background color */
-  height: 60px; /* Set the desired height */
+  background-color: #2c2c3a;
+  height: 60px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 60px; /* Adjust to align with the sidebar width */
+  right: 0;
+  z-index: 1000;
+`;
+
+export const MainContent = styled.div`
+  margin-left: 60px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px 20px 20px; /* Add top padding to accommodate the TopBar */
 `;
 
 export const UserSection = styled.div`
@@ -88,12 +89,12 @@ export const UserIcon = styled.div`
 
 export const CardContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
   margin-bottom: 20px;
 
   @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: nowrap;
   }
 `;
 
@@ -103,29 +104,27 @@ export const Card = styled.div`
   padding: 20px;
   text-align: center;
   flex: 1;
-  margin: 10px 0;
+  min-width: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (min-width: 768px) {
-    margin: 0 10px;
-  }
 `;
 
 export const CardTitle = styled.h2`
-  margin-left: 0px;
-  margin-buttom: 10px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 `;
 
 export const CardValue = styled.p`
-  font-size: 24px;
+  font-size: 2rem;
 `;
 
 export const ContentArea = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap: 20px;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -138,25 +137,22 @@ export const ActivityCard = styled.div`
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
-  height: 300px;
-  width: 10%;
-  margin: 15px 10px 10px 10px;
+  flex: 2;
 
   @media (min-width: 768px) {
-    width: 95%;
+    margin-bottom: 0;
   }
 `;
+
 export const RecentOrders = styled.div`
   background-color: #2c2c3a;
   border-radius: 8px;
   padding: 20px;
-  margin: 23px 10px 0px 10px;
-  width: 100%;
-
-  @media (min-width: 768px) {
-    width: 95%;
-  }
+  flex: 1;
+  min-width: 300px;
+  margin-top: 20px; /* Added margin at the top */
 `;
+
 
 export const RecentOrdersTable = styled.table`
   width: 100%;
@@ -178,15 +174,13 @@ export const RecentOrdersTD = styled.td`
 export const CustomerFeedback = styled.div`
   background-color: #2c2c3a;
   border-radius: 8px;
-  padding: 5px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  display: flex;
-  flex-direction: column;
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
 `;
 
 export const FeedbackItem = styled.div`
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 
 export const FeedbackHeader = styled.div`
@@ -210,24 +204,24 @@ export const PieChartContainer = styled.div`
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
-  margin-top: 43px;
+  margin-top: 50px;
 `;
 
 export const GoalContainer = styled.div`
   background-color: #2c2c3a;
   border-radius: 8px;
   padding: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  height: 28%;
+  height: auto;
 `;
 
 export const GoalCard = styled.div`
   background-color: #2c2c3a;
-  border-radius: 3px;
-  padding: 5px;
+  border-radius: 8px;
+  padding: 20px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -249,9 +243,9 @@ export const LeftColumn = styled.div`
   }
 
   h2 {
-    margin-top: -10px; /* Add spacing below the h1 tag */
+    margin-top: 0;
     margin-left: 10px;
-    align-self: flex-start; /* Ensure the h1 tag is aligned to the left */
+    align-self: flex-start;
   }
 `;
 
