@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  // height: 100vh;
   background-color: #1f1f2e;
   color: white;
 
@@ -15,26 +15,24 @@ export const DashboardContainer = styled.div`
 export const Sidebar = styled.div`
   width: 100%;
   background-color: #2c2c3a;
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
+  height: 123vh; /* Ensure the sidebar takes the full height of the viewport */
 
   @media(min-width: 768px) {
     width: 80px;
-    flex-direction: column;
     padding: 20px 0;
   }
 `;
 
 export const SidebarIcon = styled.div`
-  margin: 10px 10px;
+  margin: 20px 0; /* Reduced the margin to minimize the gap between items */
   font-size: 24px;
+`;
 
-  @media(min-width: 768px) {
-    margin: 20px 0;
-  }
+export const SidebarBottomIcon = styled(SidebarIcon)`
+  margin-top: auto; /* Push the last item to the bottom */
 `;
 
 export const MainContent = styled.div`
