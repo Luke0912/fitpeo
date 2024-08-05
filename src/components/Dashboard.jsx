@@ -1,5 +1,18 @@
-import React from 'react';
-import { FaBox, FaCheck, FaTimes, FaDollarSign, FaBullseye, FaUtensils, FaListAlt, FaUserCircle, FaBell, FaEnvelope } from 'react-icons/fa';
+import React from "react";
+import {
+  FaBox,
+  FaCheck,
+  FaTimes,
+  FaDollarSign,
+  FaBullseye,
+  FaUtensils,
+  FaListAlt,
+  FaUserCircle,
+  FaBell,
+  FaEnvelope,
+  FaHive,
+  FaCaretSquareRight,
+} from "react-icons/fa";
 import {
   DashboardContainer,
   Sidebar,
@@ -30,62 +43,106 @@ import {
   LeftColumn,
   RightColumn,
   Footer
-} from './Styled';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+} from "./Styled";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+} from "recharts";
 
 const data = [
-  { name: '5', uv: 4000 },
-  { name: '9', uv: 3000 },
-  { name: '11', uv: 2000 },
-  { name: '13', uv: 2780 },
-  { name: '15', uv: 1890 },
-  { name: '17', uv: 2390 },
-  { name: '19', uv: 3490 },
-  { name: '21', uv: 2000 },
-  { name: '23', uv: 3000 },
-  { name: '25', uv: 4000 },
-  { name: '5', uv: 4000 },
-  { name: '9', uv: 3000 },
-  { name: '11', uv: 2000 },
-  { name: '13', uv: 2780 },
-  { name: '15', uv: 1890 },
-  { name: '17', uv: 2390 },
-  { name: '19', uv: 3490 },
-  { name: '21', uv: 2000 },
-  { name: '23', uv: 3000 },
-  { name: '25', uv: 4000 },
+  { name: "5", uv: 4000 },
+  { name: "9", uv: 3000 },
+  { name: "11", uv: 2000 },
+  { name: "13", uv: 2780 },
+  { name: "15", uv: 1890 },
+  { name: "17", uv: 2390 },
+  { name: "19", uv: 3490 },
+  { name: "21", uv: 2000 },
+  { name: "23", uv: 3000 },
+  { name: "25", uv: 4000 },
+  { name: "5", uv: 4000 },
+  { name: "9", uv: 3000 },
+  { name: "11", uv: 2000 },
+  { name: "13", uv: 2780 },
+  { name: "15", uv: 1890 },
+  { name: "17", uv: 2390 },
+  { name: "19", uv: 3490 },
+  { name: "21", uv: 2000 },
+  { name: "23", uv: 3000 },
+  { name: "25", uv: 4000 },
 ];
 
 const pieData = [
-  { name: 'Completed', value: 70 },
-  { name: 'Remaining', value: 30 },
+  { name: "Completed", value: 70 },
+  { name: "Remaining", value: 30 },
 ];
 
-const COLORS = ['#00C49F', '#FFBB28'];
+const COLORS = ["#00C49F", "#FFBB28"];
 
 const Dashboard = () => {
   return (
     <DashboardContainer>
       <Sidebar>
-        <SidebarIcon><FaBox /></SidebarIcon>
-        <SidebarIcon><FaCheck /></SidebarIcon>
-        <SidebarIcon><FaTimes /></SidebarIcon>
-        <SidebarIcon><FaDollarSign /></SidebarIcon>
+      <div className="icon">
+      <FaHive />
+      </div>
+      <div className="icon2">
+      <FaBox />
+      </div>
+        <SidebarIcon>
+          <FaCheck />
+        </SidebarIcon>
+        <SidebarIcon>
+          <FaTimes />
+        </SidebarIcon>
+        <SidebarIcon>
+          <FaDollarSign />
+        </SidebarIcon>
+        <div className="icon1">
+        <FaCaretSquareRight />
+        </div>
       </Sidebar>
       <MainContent>
         <TopBar>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <SidebarIcon><FaBox /></SidebarIcon>
-            <input type="text" placeholder="Search" style={{ marginLeft: '20px', padding: '10px', borderRadius: '5px', border: 'none', backgroundColor: '#2c2c3a', color: 'white' }} />
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <input
+              type="text"
+              placeholder="Search"
+              style={{
+                marginLeft: "20px",
+                padding: "10px",
+                borderRadius: "5px",
+                border: "none",
+                backgroundColor: "#3c3c4a",
+                color: "white",
+                width: "300px", // Increase the width as needed
+              }}
+            />
           </div>
+
           <UserSection>
-            <UserIcon><FaEnvelope /></UserIcon>
-            <UserIcon><FaBell /></UserIcon>
-            <UserIcon><FaUserCircle /></UserIcon>
+            <UserIcon>
+              <FaEnvelope />
+            </UserIcon>
+            <UserIcon>
+              <FaBell />
+            </UserIcon>
+            <UserIcon>
+              <FaUserCircle />
+            </UserIcon>
           </UserSection>
         </TopBar>
         <ContentArea>
+
           <LeftColumn>
+          <h2>Dashboard</h2>
             <CardContainer>
               <Card>
                 <FaBox size={40} />
@@ -186,7 +243,10 @@ const Dashboard = () => {
                   dataKey="value"
                 >
                   {pieData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
                   ))}
                 </Pie>
               </PieChart>
@@ -211,20 +271,27 @@ const Dashboard = () => {
               <h2>Customer's Feedback</h2>
               <FeedbackItem>
                 <FeedbackHeader>
-                  <img src="https://via.placeholder.com/40" alt="Jenny Wilson" />
+                  <img
+                    src="https://via.placeholder.com/40"
+                    alt="Jenny Wilson"
+                  />
                   <FeedbackName>Jenny Wilson</FeedbackName>
                 </FeedbackHeader>
                 <FeedbackText>
-                  The food was excellent and so was the service. 
+                  The food was excellent and so was the service.
                 </FeedbackText>
               </FeedbackItem>
               <FeedbackItem>
                 <FeedbackHeader>
-                  <img src="https://via.placeholder.com/40" alt="Dianne Russell" />
+                  <img
+                    src="https://via.placeholder.com/40"
+                    alt="Dianne Russell"
+                  />
                   <FeedbackName>Dianne Russell</FeedbackName>
                 </FeedbackHeader>
                 <FeedbackText>
-                  We enjoyed the Eggs Benedict served on homemade focaccia bread and hot coffee.
+                  We enjoyed the Eggs Benedict served on homemade focaccia bread
+                  and hot coffee.
                 </FeedbackText>
               </FeedbackItem>
               <FeedbackItem>
@@ -233,7 +300,9 @@ const Dashboard = () => {
                   <FeedbackName>Devon Lane</FeedbackName>
                 </FeedbackHeader>
                 <FeedbackText>
-                  Normally, I don't like wings, but theirs are lean, meaty, and tender, and the sauce is so good! Great place, highly recommended.
+                  Normally, I don't like wings, but theirs are lean, meaty, and
+                  tender, and the sauce is so good! Great place, highly
+                  recommended.
                 </FeedbackText>
               </FeedbackItem>
             </CustomerFeedback>

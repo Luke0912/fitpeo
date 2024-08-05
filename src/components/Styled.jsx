@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DashboardContainer = styled.div`
   display: flex;
@@ -7,25 +7,50 @@ export const DashboardContainer = styled.div`
   background-color: #1f1f2e;
   color: white;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     flex-direction: row;
   }
 `;
 
 export const Sidebar = styled.div`
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center;
   width: 100%;
   background-color: #2c2c3a;
-  align-items: center;
-  justify-content: space-between;
   padding: 10px 0;
-  height: 123vh; /* Ensure the sidebar takes the full height of the viewport */
+  height: 133vh; /* Ensure the sidebar takes the full height of the viewport */
 
-  @media(min-width: 768px) {
-    width: 80px;
+  @media (min-width: 768px) {
+    width: 60px;
     padding: 20px 0;
   }
-`;
 
+  .icon {
+    margin-bottom: 20px; /* Add space between icons */
+    font-size: 2rem; /* Increase FontAwesome icon size */
+  }
+  .icon1 {
+    font-size: 2rem; /* Increase FontAwesome icon size */
+    margin-top: 800px; /* Push the icon to the bottom */
+    padding: 10px; /* Add padding for better spacing */
+    border-radius: 8px; /* Optional: add border radius for rounded corners */
+    color: white; /* Set icon color to white for better contrast */
+  }
+  .icon2 {
+    margin-bottom: 20px; /* Add space between icons */
+    font-size: 2rem; /* Increase FontAwesome icon size */
+    background-color: blue; /* Set background color */
+    padding: 10px; /* Add padding to ensure the background color is visible */
+    border-radius: 8px; /* Optional: add border radius for rounded corners */
+    display: flex; /* Ensure the icon is centered within the background */
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    color: white; /* Optional: set icon color to white for better contrast */
+  }
+`;
 export const SidebarIcon = styled.div`
   margin: 20px 0; /* Reduced the margin to minimize the gap between items */
   font-size: 24px;
@@ -39,7 +64,7 @@ export const MainContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  // padding: 20px;
 `;
 
 export const TopBar = styled.div`
@@ -47,6 +72,8 @@ export const TopBar = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  background-color: #2c2c3a; /* Highlight black background color */
+  height: 60px; /* Set the desired height */
 `;
 
 export const UserSection = styled.div`
@@ -64,7 +91,7 @@ export const CardContainer = styled.div`
   flex-direction: column;
   margin-bottom: 20px;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -81,13 +108,14 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     margin: 0 10px;
   }
 `;
 
 export const CardTitle = styled.h2`
-  margin: 10px 0;
+  margin-left: 0px;
+  margin-buttom: 10px;
 `;
 
 export const CardValue = styled.p`
@@ -99,7 +127,7 @@ export const ContentArea = styled.div`
   flex-direction: column;
   flex: 1;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -111,21 +139,21 @@ export const ActivityCard = styled.div`
   padding: 20px;
   margin-bottom: 20px;
   height: 300px;
-  width: 100%;
+  width: 10%;
+  margin: 15px 10px 10px 10px;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     width: 95%;
   }
 `;
-
 export const RecentOrders = styled.div`
   background-color: #2c2c3a;
   border-radius: 8px;
   padding: 20px;
-  margin-bottom: 20px;
+  margin: 23px 10px 0px 10px;
   width: 100%;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     width: 95%;
   }
 `;
@@ -151,6 +179,7 @@ export const CustomerFeedback = styled.div`
   background-color: #2c2c3a;
   border-radius: 8px;
   padding: 5px;
+  margin-top: 15px;
   margin-bottom: 5px;
   display: flex;
   flex-direction: column;
@@ -181,14 +210,16 @@ export const PieChartContainer = styled.div`
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
+  margin-top: 43px;
 `;
 
 export const GoalContainer = styled.div`
   background-color: #2c2c3a;
   border-radius: 8px;
   padding: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
-  height: 30%;
+  height: 28%;
 `;
 
 export const GoalCard = styled.div`
@@ -212,9 +243,15 @@ export const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     flex: 2;
     margin-right: 10px;
+  }
+
+  h2 {
+    margin-top: -10px; /* Add spacing below the h1 tag */
+    margin-left: 10px;
+    align-self: flex-start; /* Ensure the h1 tag is aligned to the left */
   }
 `;
 
